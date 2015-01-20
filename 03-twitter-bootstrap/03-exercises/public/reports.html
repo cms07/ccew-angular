@@ -1,2 +1,74 @@
-<!doctype html>
-<!-- fill it in, see http://getbootstrap.com/getting-started/#template for the template -->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Data Analytics Co.</title>
+
+		<!-- Bootstrap -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<style>
+		#a:hover:after {
+		    content: url(images/charta.jpg);
+		    position: relative;
+		    left: 500px;
+		    display: inline;
+		}
+		#b:hover:after {
+		    content: url(images/chartb.jpg);
+		    position: relative;
+		    left: 500px;
+		    display: inline;
+		}
+		#c:hover:after {
+		    content: url(images/chartc.jpg);
+		    position: relative;
+		    left: 500px;
+		    display: block;
+		}
+		
+		</style>
+	</head>
+	<body>
+		<nav class="navbar navbar-default">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="./">
+					Data Analytics Co.
+				</a>
+			</div>
+			<ul class="nav navbar-nav ">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="reports.html">Sample Reports</a></li>
+				<li><a href="signup.html">Sign Up</a></li>
+			</ul>
+		</nav>
+		<div class="container">
+			<h1>Sample Reports</h1>
+			<div>
+				<p class="lead">Here's a sample of our work:</p>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<ul class="list-group">
+					  <li id="a" class="list-group-item">Realtime Analysis</li>
+					  <li id="b" class="list-group-item">Predictive Reports</li>
+					  <li id="c" class="list-group-item">Historical Rationalizing</li>
+					</ul>
+				</div>
+				<div class="col-md-4">
+					<p id="nope" style="display:none">Text</p>
+				</div>
+			</div>
+			
+		</div>
+	</body>
+</html>

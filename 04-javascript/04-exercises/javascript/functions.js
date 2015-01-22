@@ -16,6 +16,10 @@
  * console.log( hugeNumber() ) -> 18446744073709552000
  */
 
+ function hugeNumber() {
+ 	return Math.pow(2, 64);
+ }
+console.log(hugeNumber());
 
 
 
@@ -35,8 +39,21 @@
  * testIt(0); -> "0 is zero"
  * testIt(100); -> "100 is postive"
  */
-
-
+function testIt(x) {
+	switch (true) {
+		case (x < 0):
+			console.log(x, 'is negative');
+			break;
+		case (x == 0):
+			console.log(x, 'is zero');
+			break;
+		case (x > 0):
+			console.log(x, 'is positive');
+	}
+}
+testIt(-1);
+testIt(0);
+testIt(1);
 
 
 /* 3. declare a function called addSuffix that takes two parameters, 

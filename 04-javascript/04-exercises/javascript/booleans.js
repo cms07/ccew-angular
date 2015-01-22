@@ -27,6 +27,8 @@
 function andTable(boolean1, boolean2) {
 	if (boolean1 == true && boolean2 == true) {
 		console.log("true && true : true");
+	} else {
+		console.log(boolean1, "&&", boolean2, ": false");
 	}
 	// fill in the rest with additional else if statements
 }
@@ -47,8 +49,10 @@ console.log(); // just print a blank line
  */
 
 function orTable(boolean1, boolean2) {
-	if (boolean1 == true && boolean2 == true) {
-		console.log("true || true : true");
+	if (boolean1 || boolean2) {
+		console.log(boolean1, '||', boolean2, ': true');
+	} else {
+		console.log(boolean1, '||', boolean2, ': false');
 	}
 	// fill in the rest with additional else if statements
 	// be careful, still using an && for the test!
@@ -70,10 +74,10 @@ orTable(false, false);
  * strings, numbers and booleans
  */
 
-var x;
-var y;
-var z;
-var q;
+var x = false;
+var y = 1;
+var z = 1;
+var q = "OK Coders".toLowerCase();
 
 
 if (!x) {

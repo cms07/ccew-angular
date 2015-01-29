@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,12 +17,21 @@
     <![endif]-->
 
   </head>
-  <body>
+  <body ng-init="array=[{name: 'Philip Dow', admin: true}, {name: 'Mr. T', admin: false}]">
 
     <div class="container">
       <h1>Accounts</h1>
 
-      <!-- YOUR CODE HERE -->
+      <table class="table table-striped">
+        <thead>
+          <th>Name</th>
+          <th>Admin</th>
+        </thead>
+        <tr ng-repeat="el in array">
+          <td>{{el.name}}</td>
+          <td><input type="checkbox" ng-checked="el.admin"></td>
+        </tr>
+      </table>
 
     </div>
 

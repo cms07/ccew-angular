@@ -17,23 +17,22 @@
     <![endif]-->
 
   </head>
-  <body>
+  <body ng-init="amount=0.00">
 
     <div class="container">
       <h1>Total</h1>
 
-      <div class="form-group has-success has-feedback">
-        <label class="control-label" for="inputGroupSuccess1">Enter Amount</label>
+      <!-- YOUR CODE HERE -->
+
+      <div class="form-group">
+        <label class="control-label" for="amount">Enter Amount:</label>
         <div class="input-group">
           <span class="input-group-addon">$</span>
-          <input type="number" class="form-control" id="inputGroupSuccess1" aria-describedby="inputGroupSuccess1Status" ng-model="amount">
+          <input type="number" class="form-control" id="amount" ng-model="amount">
         </div>
-        <span id="inputGroupSuccess1Status" class="sr-only">(success)</span>
       </div>
 
-      <div>
-        <span>Cost after 7.3% tax: </span>{{amount + amount * .073 | number:2}}
-      </div>
+      <p>Your total plus 7.3% tax is <strong>{{ amount + amount * 0.073 | number:2 }}</strong></p>
 
     </div>
 

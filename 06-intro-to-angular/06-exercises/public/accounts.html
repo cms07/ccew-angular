@@ -17,20 +17,26 @@
     <![endif]-->
 
   </head>
-  <body ng-init="array=[{name: 'Philip Dow', admin: true}, {name: 'Mr. T', admin: false}]">
+  <body ng-init="people=[{name: 'Philip Dow', admin: true}, {name: 'Melinda Gates', admin: true}, {name: 'Marcus Aurelius', admin: false}, {name: 'Mr. T', admin: false}, {name: 'Gandolf', admin: true}]">
 
     <div class="container">
       <h1>Accounts</h1>
 
+      <!-- YOUR CODE HERE -->
+
       <table class="table table-striped">
         <thead>
-          <th>Name</th>
-          <th>Admin</th>
+          <tr>
+            <th>Name</th>
+            <th>Admin</th>
+          </tr>
         </thead>
-        <tr ng-repeat="el in array">
-          <td>{{el.name}}</td>
-          <td><input type="checkbox" ng-checked="el.admin"></td>
-        </tr>
+        <tbody>
+          <tr ng-repeat="person in people">
+            <td>{{person.name}}</td>
+            <td><input type="checkbox" ng-model="person.admin"></td>
+          </tr>
+        </tbody>
       </table>
 
     </div>

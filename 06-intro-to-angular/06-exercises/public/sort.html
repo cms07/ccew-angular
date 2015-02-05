@@ -17,21 +17,57 @@
     <![endif]-->
 
   </head>
-  <body ng-init="array=[{name: 'Philip Dow', admin: true}, {name: 'Mr. T', admin: false}]">
+  <body ng-init="people=[{name: 'Philip Dow', admin: true}, {name: 'Melinda Gates', admin: true}, {name: 'Marcus Aurelius', admin: false}, {name: 'Mr. T', admin: false}, {name: 'Gandolf', admin: true}];criteria='name';desc=false">
 
     <div class="container">
       <h1>Sort Accounts</h1>
 
+      <!-- YOUR CODE HERE -->
+
       <table class="table table-striped">
         <thead>
-          <th ng-click="predicate = 'el.name'">Name</th>
-          <th ng-click="predicate = 'el.admin'">Admin</th>
+          <tr>
+            <th>Name</th>
+            <th>Admin</th>
+          </tr>
         </thead>
-        <tr ng-repeat="el in array | orderBy:predicate">
-          <td>{{el.name}}</td>
-          <td><input type="checkbox" ng-checked="el.admin"></td>
-        </tr>
+        <tbody>
+          <tr ng-repeat="person in people | orderBy:criteria:desc">
+            <td>{{person.name}}</td>
+            <td><input type="checkbox" ng-model="person.admin"></td>
+          </tr>
+        </tbody>
       </table>
+
+      <form>
+        <label>Sort By:</label>
+        <div class="radio">
+          <label>
+            <input type="radio" ng-model="criteria" id="name" value="name">
+            Name
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" ng-model="criteria" id="admin" value="admin">
+            Admin
+          </label>
+        </div>
+
+        <label>Sort Order:</label>
+        <div class="radio">
+          <label>
+            <input type="radio" ng-model="desc" id="desc" ng-value="false">
+            Ascending
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" ng-model="desc" id="asc" ng-value="true">
+            Descending
+          </label>
+        </div>
+      </form>
 
     </div>
 

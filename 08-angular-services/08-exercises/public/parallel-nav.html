@@ -1,1 +1,56 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Parallel Nav</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-default" ng-controller="navbarController">
+    	<div class="container-fluid">
+    		<ul class="nav navbar-nav">
+    			<li ng-click="navclick('home')"><a href="#">Home</a></li>
+    			<li ng-click="navclick('about')"><a href="#">About</a></li>
+    			<li ng-click="navclick('marketing')"><a href="#">Marketing</a></li>
+    			<li ng-click="navclick('signin')"><a href="#">Sign in</a></li>
+    		</ul>
+    	</div>
+    </nav>
+
+    <div id="content" ng-controller="contentController">
+    	{{content}}
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="/js/lib/angular.min.js"></script>
+
+   	<script type="text/javascript">
+   		angular.module('app', []);
+
+   		angular.module('app').controller('navbarController', 
+   			['$scope', '$rootScope', function($scope, $rootScope) {
+   				$scope.navclick = function(name) {
+   					$rootScope.$broadcast('clicked', name);
+
+   				};
+
+   			}]);
+
+
+   		angular.module('app').controller('contentController', 
+   			['$scope', function($scope) {
+   				$scope.$on('clicked', function(event, name) {
+   					$scope.content = name + " was clicked.";
+   				});
+   			}]);
+
+   	</script>
+  </body>
+</html>
